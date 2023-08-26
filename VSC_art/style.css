@@ -1,3 +1,29 @@
-#btn{
-    color:blueviolet;
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 40%;
+}
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.holder{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
+.button{
+    width:200px;
+    background-color: purple;
+    border: none;
+    height: 30px;
+    color: white;
+    border-radius: 15px;
 }
