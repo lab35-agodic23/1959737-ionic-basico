@@ -1,51 +1,20 @@
-const inputUser = document.getElementById('user');
-const inputPassword = document.getElementById('password');
+const presupuesto = [];
 
-const buttonLogin = document.getElementById('login');
-const buttonRegister = document.getElementById('registrar');
+function guardar() {
+    const tGasto = document.getElementById('gasto');
+    const monto = document.getElementById('cantidad')
 
-const messageStatus = document.getElementById('mensaje');
-const bold = document.getElementById('bold');
+    const gasto= `${tGasto.value}: $${monto.value}`;
+  
+    presupuesto.push(gasto);
 
-let users = [];
-class user{
-    constructor(name, password){
-        this.name=name;
-        this.password=password;
-    }
-}
-function login(){
-    messageStatus.textContent='';
-    bold.textContent='';
-    if(inputUser.value != '' || inputPassword.value!=''){
-        for(let i = 0; i<users.length;i++){
-            if(users[i].name==inputUser.value &&users[i].password==inputPassword.value){
-                messageStatus.textContent = 'Login correcto '; 
-                bold.textContent=inputUser.value;
-                inputPassword.value = '';
-                return
-            }
-            
-        }
-        messageStatus.textContent = "login incorrecto";
-        
-        
-    }
+    monto.value = '';
+    tGasto.value = '';
 
-}
-function register(){
-    messageStatus.textContent = '';
-    bold.textContent='';
-    if(inputUser.value != '' || inputPassword.value!=''){
-        newUser = new user(inputUser.value,inputPassword.value);
-        users.push(newUser);
-        messageStatus.textContent = 'Registro con exito ';
-        bold.textContent=inputUser.value;
-        inputPassword.value = '';
-    }
-    else{
-        messageStatus.textContent ='faltan campos por llenar';
-    }
-}
-buttonLogin.addEventListener('click', login);
-buttonRegister.addEventListener('click',register);
+    
+    console.log('Información guardada:', gasto);
+  }; 
+
+  
+const btnGuardar = document.getElementById('guardar');
+btnGuardar.addEventListener('click', guardar);
